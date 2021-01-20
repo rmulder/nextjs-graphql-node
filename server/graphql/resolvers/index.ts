@@ -1,6 +1,6 @@
 import fakeData from '../../../db/fakeData';
 
-const portfolioQueries = {
+const providerQueries = {
 	portfolio: (root, { id }) => fakeData.providers.find(p => p._id === id),
 	portfolios: () => fakeData.providers,
 };
@@ -34,4 +34,4 @@ const portfolioMutations = {
 	}
 }
 
-export {portfolioQueries, portfolioMutations};
+export { providerQueries, portfolioMutations};

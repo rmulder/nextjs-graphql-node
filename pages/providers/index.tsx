@@ -48,27 +48,27 @@ export default function Portfolios() {
           Create provider
         </Button>
         <Box display='flex' flexWrap='wrap'>
-          {providers.map((portfolio) => (
-            <Box key={portfolio._id} m={1}>
+          {providers.map((provider) => (
+            <Box key={provider._id} m={1}>
               <Card>
                 <CardContent>
                   <Typography variant='h5' component='h2'>
-                    {portfolio.title}
+                    {provider.title}
                   </Typography>
                   <Typography color='textSecondary' gutterBottom>
-                    {portfolio.company}
+                    {provider.company}
                   </Typography>
-                  <Link href={`/providers/${portfolio._id}`}>
+                  <Link href={`/providers/${provider._id}`}>
                     <Button color='primary'>show</Button>
                   </Link>
                   <Button
                     color='primary'
-                    onClick={() => handleUpdatePortfolio(portfolio._id)}
+                    onClick={() => handleUpdatePortfolio(provider._id)}
                   >
                     edit
                   </Button>
                   <ButtonError
-                    onClick={() => handleDeletePortfolio(portfolio._id)}
+                    onClick={() => handleDeletePortfolio(provider._id)}
                   >
                     delete
                   </ButtonError>

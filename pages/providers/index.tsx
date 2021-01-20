@@ -34,39 +34,52 @@ export default function Portfolios() {
 	}
 
 	return (
-		<>
-			<Head>
-				<title>Portfolios</title>
-			</Head>
-			<section>
-				<h2>Portfolios</h2>
-				<Button variant="contained" color="primary" onClick={handleCreatePortfolio}>Create portfolio</Button>
-				<Box display="flex" flexWrap="wrap">
-					{portfolios.map(portfolio => (
-						<Box key={portfolio._id} m={1}>
-							<Card>
-								<CardContent>
-									<Typography variant="h5" component="h2">
-										{portfolio.title}
-									</Typography>
-									<Typography color="textSecondary" gutterBottom>
-										{portfolio.company}
-									</Typography>
-									<Link href={`/portfolios/${portfolio._id}`}>
-										<Button color="primary">show</Button>
-									</Link>
-									<Button color="primary"
-											onClick={() => handleUpdatePortfolio(portfolio._id)}>edit</Button>
-									<ButtonError
-										onClick={() => handleDeletePortfolio(portfolio._id)}>delete</ButtonError>
-								</CardContent>
-							</Card>
-						</Box>
-					))}
-				</Box>
-			</section>
-		</>
-	)
+    <>
+      <Head>
+        <title>Providers</title>
+      </Head>
+      <section>
+        <h2>Providers</h2>
+        <Button
+          variant='contained'
+          color='primary'
+          onClick={handleCreatePortfolio}
+        >
+          Create portfolio
+        </Button>
+        <Box display='flex' flexWrap='wrap'>
+          {portfolios.map((portfolio) => (
+            <Box key={portfolio._id} m={1}>
+              <Card>
+                <CardContent>
+                  <Typography variant='h5' component='h2'>
+                    {portfolio.title}
+                  </Typography>
+                  <Typography color='textSecondary' gutterBottom>
+                    {portfolio.company}
+                  </Typography>
+                  <Link href={`/providers/${portfolio._id}`}>
+                    <Button color='primary'>show</Button>
+                  </Link>
+                  <Button
+                    color='primary'
+                    onClick={() => handleUpdatePortfolio(portfolio._id)}
+                  >
+                    edit
+                  </Button>
+                  <ButtonError
+                    onClick={() => handleDeletePortfolio(portfolio._id)}
+                  >
+                    delete
+                  </ButtonError>
+                </CardContent>
+              </Card>
+            </Box>
+          ))}
+        </Box>
+      </section>
+    </>
+  );
 }
 
 export async function getStaticProps() {

@@ -11,7 +11,7 @@ export default function Portfolio({id}) {
 	return (
 		<>
 			<Head>
-				<title>Portfolios | {portfolio.title}</title>
+				<title>Providers | {portfolio.title}</title>
 			</Head>
 			<section>
 				<h1>{portfolio.title}</h1>

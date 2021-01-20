@@ -1,4 +1,4 @@
-import providerType from './portfolio';
+import providerType from './provider';
 
 const rootQuery = `
 	type Query { 

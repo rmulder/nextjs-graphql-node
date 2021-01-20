@@ -7,24 +7,24 @@ const portfolioQueries = {
 
 const portfolioMutations = {
 	createPortfolio: (root, {input}) => {
-		const portfolio = {
+		const provider = {
 			...input,
 			_id: Math.floor(Math.random() * 16777215).toString(16)
 		}
 
-		fakeData.providers.push(portfolio);
-		return portfolio;
+		fakeData.providers.push(provider);
+		return provider;
 	},
 	updatePortfolio: (root, {id, input}) => {
 		const idx = fakeData.providers.findIndex(p => p._id === id);
 		const portfolioToUpdate = fakeData.providers[idx];
-		const portfolio = {
+		const provider = {
 			...portfolioToUpdate,
 			...input,
 		}
 
-		fakeData.providers[idx] = portfolio;
-		return portfolio;
+		fakeData.providers[idx] = provider;
+		return provider;
 	},
 	deletePortfolio: (root, {id}) => {
 		const idx = fakeData.providers.findIndex(p => p._id === id);

@@ -2,15 +2,15 @@ import providerType from './provider';
 
 const rootQuery = `
 	type Query { 
-	 	provider(id: ID): Portfolio,
-		providers: [Portfolio],
+	 	provider(id: ID): Provider,
+		providers: [Provider],
 	}
 `;
 
 const rootMutation = `
 	type Mutation { 
-		createProvider(input: PortfolioInput): Portfolio,
-		updateProvider(id: ID, input: PortfolioInput): Portfolio,
+		createProvider(input: PortfolioInput): Provider,
+		updateProvider(id: ID, input: PortfolioInput): Provider,
 		deleteProvider(id: ID): ID,
 	}
 `;

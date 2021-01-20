@@ -10,7 +10,7 @@ const providerFields = `
 `;
 
 const providerType = `
-	type Portfolio {
+	type Provider {
 		_id: ID,
 		${providerFields}
 	}

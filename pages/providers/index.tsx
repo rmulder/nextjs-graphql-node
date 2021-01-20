@@ -5,14 +5,19 @@ import Link from 'next/link';
 import ButtonError from '../../client/components/shared/ButtonError';
 import {NetworkStatus} from '@apollo/client';
 import {initializeApollo} from '../../client/lib/apollo';
-import {useCreatePortfolio, useDeletePortfolio, useGetPortfolios, useUpdatePortfolio} from '../../client/apollo/actions';
+import {
+  useCreateProvider,
+  useDeleteProvider,
+  useGetProviders,
+  useUpdateProvider,
+} from "../../client/apollo/actions";
 import {GET_PROVIDERS} from '../../client/apollo/queries';
 
 export default function Providers() {
-	const {data, networkStatus} = useGetPortfolios();
-	const [createProvider] = useCreatePortfolio();
-	const [deleteProvider] = useDeletePortfolio();
-	const [updateProvider] = useUpdatePortfolio();
+	const { data, networkStatus } = useGetProviders();
+	const [createProvider] = useCreateProvider();
+	const [deleteProvider] = useDeleteProvider();
+	const [updateProvider] = useUpdateProvider();
 
 	const providers = data && data.portfolios || [];
 
@@ -21,17 +26,17 @@ export default function Providers() {
 	}, [networkStatus]);
 
 
-	const handleCreatePortfolio = async () => {
+	const handleCreateProvider = async () => {
 		await createProvider();
 	}
 
-	const handleUpdatePortfolio = async (id: string) => {
+	const handleUpdateProvider = async (id: string) => {
 		await updateProvider({variables: {id}});
 	}
 
-	const handleDeletePortfolio = async (id: string) => {
-		await deleteProvider({variables: {id}});
-	}
+	const handleDeleteProvider = async (id: string) => {
+    await deleteProvider({ variables: { id } });
+  };
 
 	return (
     <>
@@ -43,7 +48,7 @@ export default function Providers() {
         <Button
           variant='contained'
           color='primary'
-          onClick={handleCreatePortfolio}
+          onClick={handleCreateProvider}
         >
           Create provider
         </Button>
@@ -63,12 +68,12 @@ export default function Providers() {
                   </Link>
                   <Button
                     color='primary'
-                    onClick={() => handleUpdatePortfolio(provider._id)}
+                    onClick={() => handleUpdateProvider(provider._id)}
                   >
                     edit
                   </Button>
                   <ButtonError
-                    onClick={() => handleDeletePortfolio(provider._id)}
+                    onClick={() => handleDeleteProvider(provider._id)}
                   >
                     delete
                   </ButtonError>

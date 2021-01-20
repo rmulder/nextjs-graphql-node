@@ -14,7 +14,7 @@ export default function Portfolios() {
 	const [deletePortfolio] = useDeletePortfolio();
 	const [updatePortfolio] = useUpdatePortfolio();
 
-	const portfolios = data && data.portfolios || [];
+	const providers = data && data.portfolios || [];
 
 	useEffect(() => {
 		console.log('networkStatus', networkStatus, NetworkStatus[networkStatus]);
@@ -45,10 +45,10 @@ export default function Portfolios() {
           color='primary'
           onClick={handleCreatePortfolio}
         >
-          Create portfolio
+          Create provider
         </Button>
         <Box display='flex' flexWrap='wrap'>
-          {portfolios.map((portfolio) => (
+          {providers.map((portfolio) => (
             <Box key={portfolio._id} m={1}>
               <Card>
                 <CardContent>

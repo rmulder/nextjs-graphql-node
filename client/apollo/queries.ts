@@ -18,7 +18,7 @@ export const GET_PROVIDER = gql`
 
 export const GET_PROVIDERS = gql`
     query Providers {
-        portfolios {
+        providers {
             _id,
             title,
             company

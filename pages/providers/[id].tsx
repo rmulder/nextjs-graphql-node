@@ -45,12 +45,12 @@ export async function getStaticProps({params: {id}}) {
 export async function getStaticPaths() {
 	const apolloClient = initializeApollo()
 
-	const {data: {portfolios}} = await apolloClient.query({
+	const {data: {providers}} = await apolloClient.query({
 		query: GET_PROVIDERS,
 	})
 
 	return {
-		paths: portfolios.map(p => ({
+		paths: providers.map(p => ({
 			params: {id: p._id},
 		})),
 		fallback: false, // redirect to 404 when id not found

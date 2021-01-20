@@ -19,7 +19,7 @@ export default function Providers() {
 	const [deleteProvider] = useDeleteProvider();
 	const [updateProvider] = useUpdateProvider();
 
-	const providers = data && data.portfolios || [];
+	const providers = data && data.providers || [];
 
 	useEffect(() => {
 		console.log('networkStatus', networkStatus, NetworkStatus[networkStatus]);

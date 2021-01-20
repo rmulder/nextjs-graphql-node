@@ -2,22 +2,22 @@ import {useMutation, useQuery} from '@apollo/client';
 import { CREATE_PROVIDER, DELETE_PROVIDER, GET_PROVIDERS, UPDATE_PROVIDER} from './queries';
 
 const onProviderCreated = (cache, {data: {createProvider}}) => {
-	const {portfolios: cachedPortfolios} = cache.readQuery({query: GET_PROVIDERS});
-	const portfolios = [...cachedPortfolios, createProvider];
+	const {providers: cachedPortfolios} = cache.readQuery({query: GET_PROVIDERS});
+	const providers = [...cachedPortfolios, createProvider];
 
 	cache.writeQuery({
 		query: GET_PROVIDERS,
-		data: {portfolios},
+		data: {providers},
 	});
 }
 
 const onProviderDeleted = (cache, {data: {deleteProvider}}) => {
-	const {portfolios: cachedPortfolios} = cache.readQuery({query: GET_PROVIDERS})
-	const portfolios = cachedPortfolios.filter(p => p._id !== deleteProvider);
+	const {providers: cachedPortfolios} = cache.readQuery({query: GET_PROVIDERS})
+	const providers = cachedPortfolios.filter(p => p._id !== deleteProvider);
 
 	cache.writeQuery({
 		query: GET_PROVIDERS,
-		data: { portfolios }
+		data: { providers }
 	});
 }
 
@@ -33,7 +33,7 @@ export const useGetProviders = () => useQuery(
 
 export const useCreateProvider = () => useMutation(CREATE_PROVIDER, { update: onProviderCreated});
 
-// todo: warning Cache data may be lost when replacing the portfolios field of a Query object
+// todo: warning Cache data may be lost when replacing the providers field of a Query object
 export const useDeleteProvider = () => useMutation(DELETE_PROVIDER, {update: onProviderDeleted});
 
 export const useUpdateProvider = () => useMutation(UPDATE_PROVIDER);

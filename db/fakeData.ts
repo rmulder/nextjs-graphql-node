@@ -1,5 +1,5 @@
 const fakeData = {
-	portfolio: [
+	providers: [
 		{
 			_id: "sad87da79",
 			title: 'Job in Amazon',

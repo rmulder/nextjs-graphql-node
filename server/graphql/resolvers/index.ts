@@ -1,8 +1,8 @@
 import fakeData from '../../../db/fakeData';
 
 const portfolioQueries = {
-	portfolio: (root, {id}) => fakeData.portfolio.find(p => p._id === id),
-	portfolios: () => fakeData.portfolio,
+	portfolio: (root, { id }) => fakeData.providers.find(p => p._id === id),
+	portfolios: () => fakeData.providers,
 };
 
 const portfolioMutations = {
@@ -12,23 +12,23 @@ const portfolioMutations = {
 			_id: Math.floor(Math.random() * 16777215).toString(16)
 		}
 
-		fakeData.portfolio.push(portfolio);
+		fakeData.providers.push(portfolio);
 		return portfolio;
 	},
 	updatePortfolio: (root, {id, input}) => {
-		const idx = fakeData.portfolio.findIndex(p => p._id === id);
-		const portfolioToUpdate = fakeData.portfolio[idx];
+		const idx = fakeData.providers.findIndex(p => p._id === id);
+		const portfolioToUpdate = fakeData.providers[idx];
 		const portfolio = {
 			...portfolioToUpdate,
 			...input,
 		}
 
-		fakeData.portfolio[idx] = portfolio;
+		fakeData.providers[idx] = portfolio;
 		return portfolio;
 	},
 	deletePortfolio: (root, {id}) => {
-		const idx = fakeData.portfolio.findIndex(p => p._id === id);
-		fakeData.portfolio.splice(idx, 1);
+		const idx = fakeData.providers.findIndex(p => p._id === id);
+		fakeData.providers.splice(idx, 1);
 
 		return id;
 	}

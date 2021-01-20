@@ -26,7 +26,7 @@ const providerMutations = {
 		fakeData.providers[idx] = provider;
 		return provider;
 	},
-	deletePortfolio: (root, {id}) => {
+	deleteProvider: (root, {id}) => {
 		const idx = fakeData.providers.findIndex(p => p._id === id);
 		fakeData.providers.splice(idx, 1);
 

@@ -11,7 +11,7 @@ import {GET_PROVIDERS} from '../../client/apollo/queries';
 export default function Providers() {
 	const {data, networkStatus} = useGetPortfolios();
 	const [createProvider] = useCreatePortfolio();
-	const [deletePortfolio] = useDeletePortfolio();
+	const [deleteProvider] = useDeletePortfolio();
 	const [updateProvider] = useUpdatePortfolio();
 
 	const providers = data && data.portfolios || [];
@@ -30,7 +30,7 @@ export default function Providers() {
 	}
 
 	const handleDeletePortfolio = async (id: string) => {
-		await deletePortfolio({variables: {id}});
+		await deleteProvider({variables: {id}});
 	}
 
 	return (

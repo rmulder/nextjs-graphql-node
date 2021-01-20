@@ -68,7 +68,7 @@ export const UPDATE_PROVIDER = gql`
         }
     }`;
 
-export const DELETE_PORTFOLIO = gql`
-    mutation DeletePortfolio($id: ID) {
-        deletePortfolio(id: $id)
+export const DELETE_PROVIDER = gql`
+    mutation DeleteProvider($id: ID) {
+        deleteProvider(id: $id)
     }`;

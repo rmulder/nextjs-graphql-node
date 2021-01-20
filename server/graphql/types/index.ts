@@ -11,7 +11,7 @@ const rootMutation = `
 	type Mutation { 
 		createProvider(input: PortfolioInput): Portfolio,
 		updateProvider(id: ID, input: PortfolioInput): Portfolio,
-		deletePortfolio(id: ID): ID,
+		deleteProvider(id: ID): ID,
 	}
 `;
 

@@ -12,7 +12,7 @@ export default function Portfolios() {
 	const {data, networkStatus} = useGetPortfolios();
 	const [createProvider] = useCreatePortfolio();
 	const [deletePortfolio] = useDeletePortfolio();
-	const [updatePortfolio] = useUpdatePortfolio();
+	const [updateProvider] = useUpdatePortfolio();
 
 	const providers = data && data.portfolios || [];
 
@@ -26,7 +26,7 @@ export default function Portfolios() {
 	}
 
 	const handleUpdatePortfolio = async (id: string) => {
-		await updatePortfolio({variables: {id}});
+		await updateProvider({variables: {id}});
 	}
 
 	const handleDeletePortfolio = async (id: string) => {

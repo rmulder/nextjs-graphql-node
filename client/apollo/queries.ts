@@ -45,8 +45,8 @@ export const CREATE_PROVIDER = gql`
 `;
 
 export const UPDATE_PROVIDER = gql`
-    mutation UpdatePortfolio($id: ID) {
-        updatePortfolio(id: $id, input: {
+    mutation UpdateProvider($id: ID) {
+        updateProvider(id: $id, input: {
             title: "UPDATE Job"
             company: "UPDATE Company"
             companyWebsite: "UPDATE Website"

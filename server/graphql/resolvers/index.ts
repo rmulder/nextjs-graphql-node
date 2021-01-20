@@ -15,7 +15,7 @@ const providerMutations = {
 		fakeData.providers.push(provider);
 		return provider;
 	},
-	updatePortfolio: (root, {id, input}) => {
+	updateProvider: (root, {id, input}) => {
 		const idx = fakeData.providers.findIndex(p => p._id === id);
 		const providerToUpdate = fakeData.providers[idx];
 		const provider = {

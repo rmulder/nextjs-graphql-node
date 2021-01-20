@@ -10,7 +10,7 @@ const rootQuery = `
 const rootMutation = `
 	type Mutation { 
 		createProvider(input: PortfolioInput): Portfolio,
-		updatePortfolio(id: ID, input: PortfolioInput): Portfolio,
+		updateProvider(id: ID, input: PortfolioInput): Portfolio,
 		deletePortfolio(id: ID): ID,
 	}
 `;

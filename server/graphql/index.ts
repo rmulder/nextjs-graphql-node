@@ -1,6 +1,6 @@
 import {ApolloServer, gql} from 'apollo-server-express';
 import type from './types';
-import { portfolioMutations, providerQueries} from './resolvers';
+import { providerMutations, providerQueries} from './resolvers';
 
 const typeDefs = gql`${type}`;
 
@@ -9,7 +9,7 @@ const resolvers = {
 		...providerQueries
 	},
 	Mutation: {
-		...portfolioMutations
+		...providerMutations
 	},
 };
 

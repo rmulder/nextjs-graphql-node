@@ -5,7 +5,7 @@ const providerQueries = {
 	portfolios: () => fakeData.providers,
 };
 
-const portfolioMutations = {
+const providerMutations = {
 	createPortfolio: (root, {input}) => {
 		const provider = {
 			...input,
@@ -34,4 +34,4 @@ const portfolioMutations = {
 	}
 }
 
-export { providerQueries, portfolioMutations};
+export { providerQueries, providerMutations};

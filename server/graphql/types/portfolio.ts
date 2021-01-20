@@ -1,4 +1,4 @@
-const portfolioFields = `
+const providerFields = `
 	title: String,
 	company: String,
 	companyWebsite: String,
@@ -9,15 +9,15 @@ const portfolioFields = `
 	endDate: String,
 `;
 
-const portfolioType = `
+const providerType = `
 	type Portfolio {
 		_id: ID,
-		${portfolioFields}
+		${providerFields}
 	}
 	
 	input PortfolioInput {
-		${portfolioFields}
+		${providerFields}
 	}
 `;
 
-export default portfolioType;
+export default providerType;

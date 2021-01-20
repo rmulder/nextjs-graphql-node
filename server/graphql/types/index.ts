@@ -1,4 +1,4 @@
-import portfolioType from './portfolio';
+import providerType from './portfolio';
 
 const rootQuery = `
 	type Query { 
@@ -18,7 +18,7 @@ const rootMutation = `
 const type = `
 	${rootQuery}
 	${rootMutation}
-	${portfolioType}
+	${providerType}
 `;
 
 export default type;

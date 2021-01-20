@@ -2,7 +2,7 @@ import providerType from './portfolio';
 
 const rootQuery = `
 	type Query { 
-	 	portfolio(id: ID): Portfolio,
+	 	provider(id: ID): Portfolio,
 		providers: [Portfolio],
 	}
 `;

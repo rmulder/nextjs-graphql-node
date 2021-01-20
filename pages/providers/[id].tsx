@@ -6,7 +6,7 @@ import {initializeApollo} from '../../client/lib/apollo';
 export default function Provider({id}) {
 	const {data} = useQuery(GET_PROVIDER, {variables: {id}});
 
-	const provider = data && data.portfolio || {};
+	const provider = data && data.provider || {};
 
 	return (
     <>

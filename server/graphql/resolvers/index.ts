@@ -1,7 +1,7 @@
 import fakeData from '../../../db/fakeData';
 
 const providerQueries = {
-	portfolio: (root, { id }) => fakeData.providers.find(p => p._id === id),
+	provider: (root, { id }) => fakeData.providers.find(p => p._id === id),
 	providers: () => fakeData.providers,
 };
 

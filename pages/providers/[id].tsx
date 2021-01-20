@@ -6,18 +6,23 @@ import {initializeApollo} from '../../client/lib/apollo';
 export default function Provider({id}) {
 	const {data} = useQuery(GET_PROVIDER, {variables: {id}});
 
-	const portfolio = data && data.portfolio || {};
+	const provider = data && data.portfolio || {};
 
 	return (
-		<>
-			<Head>
-				<title>Providers | {portfolio.title}</title>
-			</Head>
-			<section>
-				<h1>{portfolio.title}</h1>
-			</section>
-		</>
-	)
+    <>
+      <Head>
+        <title>Providers | {provider.title}</title>
+      </Head>
+      <section>
+        <h1>{provider.title}</h1>
+        <div>{provider.company}</div>
+        <div>{provider.companyWebsite}</div>
+        <div>{provider.location}</div>
+        <div>{provider.jobTitle}</div>
+				<div>{provider.description}</div>
+      </section>
+    </>
+  );
 }
 
 export async function getStaticProps({params: {id}}) {

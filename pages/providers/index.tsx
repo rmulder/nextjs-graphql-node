@@ -8,7 +8,7 @@ import {initializeApollo} from '../../client/lib/apollo';
 import {useCreatePortfolio, useDeletePortfolio, useGetPortfolios, useUpdatePortfolio} from '../../client/apollo/actions';
 import {GET_PROVIDERS} from '../../client/apollo/queries';
 
-export default function Portfolios() {
+export default function Providers() {
 	const {data, networkStatus} = useGetPortfolios();
 	const [createProvider] = useCreatePortfolio();
 	const [deletePortfolio] = useDeletePortfolio();

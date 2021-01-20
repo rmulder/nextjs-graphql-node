@@ -3,7 +3,7 @@ import {useQuery} from '@apollo/client';
 import {GET_PROVIDER, GET_PROVIDERS} from '../../client/apollo/queries';
 import {initializeApollo} from '../../client/lib/apollo';
 
-export default function Portfolio({id}) {
+export default function Provider({id}) {
 	const {data} = useQuery(GET_PROVIDER, {variables: {id}});
 
 	const portfolio = data && data.portfolio || {};

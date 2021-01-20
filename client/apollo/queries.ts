@@ -1,7 +1,7 @@
 import {gql} from '@apollo/client';
 
 export const GET_PROVIDER = gql`
-    query Portfolio($id: ID) {
+    query Provider($id: ID) {
         portfolio (id: $id) {
             _id,
             title,
@@ -17,7 +17,7 @@ export const GET_PROVIDER = gql`
 `
 
 export const GET_PROVIDERS = gql`
-    query Portfolios {
+    query Providers {
         portfolios {
             _id,
             title,

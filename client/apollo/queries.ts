@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-export const GET_PORTFOLIO = gql`
+export const GET_PROVIDER = gql`
     query Portfolio($id: ID) {
         portfolio (id: $id) {
             _id,
@@ -16,7 +16,7 @@ export const GET_PORTFOLIO = gql`
     }
 `
 
-export const GET_PORTFOLIOS = gql`
+export const GET_PROVIDERS = gql`
     query Portfolios {
         portfolios {
             _id,
@@ -26,7 +26,7 @@ export const GET_PORTFOLIOS = gql`
     }
 `
 
-export const CREATE_PORTFOLIO = gql`
+export const CREATE_PROVIDER = gql`
     mutation CreatePortfolio {
         createPortfolio(input: {
             title: "New title test",
@@ -44,7 +44,7 @@ export const CREATE_PORTFOLIO = gql`
     }
 `;
 
-export const UPDATE_PORTFOLIO = gql`
+export const UPDATE_PROVIDER = gql`
     mutation UpdatePortfolio($id: ID) {
         updatePortfolio(id: $id, input: {
             title: "UPDATE Job"

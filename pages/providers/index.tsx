@@ -6,7 +6,7 @@ import ButtonError from '../../client/components/shared/ButtonError';
 import {NetworkStatus} from '@apollo/client';
 import {initializeApollo} from '../../client/lib/apollo';
 import {useCreatePortfolio, useDeletePortfolio, useGetPortfolios, useUpdatePortfolio} from '../../client/apollo/actions';
-import {GET_PORTFOLIOS} from '../../client/apollo/queries';
+import {GET_PROVIDERS} from '../../client/apollo/queries';
 
 export default function Portfolios() {
 	const {data, networkStatus} = useGetPortfolios();
@@ -86,7 +86,7 @@ export async function getStaticProps() {
 	const apolloClient = initializeApollo()
 
 	await apolloClient.query({
-		query: GET_PORTFOLIOS,
+		query: GET_PROVIDERS,
 	})
 
 	return {

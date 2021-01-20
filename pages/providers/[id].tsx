@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import {useQuery} from '@apollo/client';
-import {GET_PORTFOLIO, GET_PORTFOLIOS} from '../../client/apollo/queries';
+import {GET_PROVIDER, GET_PROVIDERS} from '../../client/apollo/queries';
 import {initializeApollo} from '../../client/lib/apollo';
 
 export default function Portfolio({id}) {
-	const {data} = useQuery(GET_PORTFOLIO, {variables: {id}});
+	const {data} = useQuery(GET_PROVIDER, {variables: {id}});
 
 	const portfolio = data && data.portfolio || {};
 
@@ -24,7 +24,7 @@ export async function getStaticProps({params: {id}}) {
 	const apolloClient = initializeApollo()
 
 	await apolloClient.query({
-		query: GET_PORTFOLIO,
+		query: GET_PROVIDER,
 		variables: {id}
 	})
 
@@ -41,7 +41,7 @@ export async function getStaticPaths() {
 	const apolloClient = initializeApollo()
 
 	const {data: {portfolios}} = await apolloClient.query({
-		query: GET_PORTFOLIOS,
+		query: GET_PROVIDERS,
 	})
 
 	return {

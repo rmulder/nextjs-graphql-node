@@ -6,7 +6,7 @@ const providerQueries = {
 };
 
 const providerMutations = {
-	createPortfolio: (root, {input}) => {
+	createProvider: (root, {input}) => {
 		const provider = {
 			...input,
 			_id: Math.floor(Math.random() * 16777215).toString(16)

@@ -10,7 +10,7 @@ import {GET_PROVIDERS} from '../../client/apollo/queries';
 
 export default function Portfolios() {
 	const {data, networkStatus} = useGetPortfolios();
-	const [createPortfolio] = useCreatePortfolio();
+	const [createProvider] = useCreatePortfolio();
 	const [deletePortfolio] = useDeletePortfolio();
 	const [updatePortfolio] = useUpdatePortfolio();
 
@@ -22,7 +22,7 @@ export default function Portfolios() {
 
 
 	const handleCreatePortfolio = async () => {
-		await createPortfolio();
+		await createProvider();
 	}
 
 	const handleUpdatePortfolio = async (id: string) => {

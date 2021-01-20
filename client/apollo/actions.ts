@@ -1,9 +1,9 @@
 import {useMutation, useQuery} from '@apollo/client';
 import {CREATE_PROVIDER, DELETE_PORTFOLIO, GET_PROVIDERS, UPDATE_PROVIDER} from './queries';
 
-const onPortfolioCreated = (cache, {data: {createPortfolio}}) => {
+const onPortfolioCreated = (cache, {data: {createProvider}}) => {
 	const {portfolios: cachedPortfolios} = cache.readQuery({query: GET_PROVIDERS});
-	const portfolios = [...cachedPortfolios, createPortfolio];
+	const portfolios = [...cachedPortfolios, createProvider];
 
 	cache.writeQuery({
 		query: GET_PROVIDERS,

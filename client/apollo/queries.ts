@@ -27,8 +27,8 @@ export const GET_PROVIDERS = gql`
 `
 
 export const CREATE_PROVIDER = gql`
-    mutation CreatePortfolio {
-        createPortfolio(input: {
+    mutation CreateProvider {
+        createProvider(input: {
             title: "New title test",
             company: "121221",
             companyWebsite: "121221",

@@ -15,7 +15,7 @@ const providerType = `
 		${providerFields}
 	}
 	
-	input PortfolioInput {
+	input ProviderInput {
 		${providerFields}
 	}
 `;

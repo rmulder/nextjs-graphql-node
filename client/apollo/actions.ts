@@ -2,8 +2,8 @@ import {useMutation, useQuery} from '@apollo/client';
 import { CREATE_PROVIDER, DELETE_PROVIDER, GET_PROVIDERS, UPDATE_PROVIDER} from './queries';
 
 const onProviderCreated = (cache, {data: {createProvider}}) => {
-	const {providers: cachedPortfolios} = cache.readQuery({query: GET_PROVIDERS});
-	const providers = [...cachedPortfolios, createProvider];
+	const {providers: cachedProviders} = cache.readQuery({query: GET_PROVIDERS});
+	const providers = [...cachedProviders, createProvider];
 
 	cache.writeQuery({
 		query: GET_PROVIDERS,
@@ -12,8 +12,8 @@ const onProviderCreated = (cache, {data: {createProvider}}) => {
 }
 
 const onProviderDeleted = (cache, {data: {deleteProvider}}) => {
-	const {providers: cachedPortfolios} = cache.readQuery({query: GET_PROVIDERS})
-	const providers = cachedPortfolios.filter(p => p._id !== deleteProvider);
+	const {providers: cachedProviders} = cache.readQuery({query: GET_PROVIDERS})
+	const providers = cachedProviders.filter(p => p._id !== deleteProvider);
 
 	cache.writeQuery({
 		query: GET_PROVIDERS,
